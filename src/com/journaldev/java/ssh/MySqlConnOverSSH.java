@@ -47,8 +47,10 @@ class MySqlConnectionOverSsh {
             con = DriverManager.getConnection(url+db, dbUser, dbPasswd);
             try{
                 Statement st = con.createStatement();
-                String sql = "insert into student values(36,'mannu')";
-
+                Scanner sc = new Scanner(System.in);
+                
+                String sql = sc.nextLine(); // SQL command to be executed
+                
                 int update = st.executeUpdate(sql);
                 if(update >= 1){
                     System.out.println("Row is updated.");
